@@ -1,0 +1,22 @@
+<button id="edit-btn">تعديل<i class="fa-regular fa-pen-to-square" style="color: #8A74F9;"></i></button>
+
+<br>
+<div class="card">
+ <div class="del"> <div><p  id="del" data-bs-placement="top" pTooltip pTooltip="حذف" tooltipPosition="right" tooltipShowDelay="500"><i  class="fa-regular fa-trash-can" style="color: #ffffff;"></i></p></div>
+  <div class="up-area">
+    <div class="card-title">عرض التذكرة الخاصة بالفيلم</div>
+    <div class="card-text">
+    <p class="copy-text">
+      <span (click)="copyText(text)"><i class="fa-regular fa-clone fa-lg" style="color: #B197FC;"></i></span>{{text}}</p></div>
+    <div class="card-text">فعال حتي 15 يوليو 2023</div>
+</div>
+</div>
+<hr>
+<div class="down-area">
+ <qrcode [qrdata]="'hello'" [width]="90" [cssClass]="'qr'" [allowEmptyString]=true ></qrcode>
+ <div class="offer">
+  <button id="share-btn">مشاركة<i class="fa-regular fa-paper-plane fa-flip-horizontal fa-sm" style="color: #ffffff;"></i></button>
+  <p id="offer">خصم<br>25%</p>
+</div>
+</div>
+</div>

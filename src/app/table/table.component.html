@@ -1,0 +1,50 @@
+<div class="row-items">
+  <div class="left-row">
+   <button id="reserve-btn">حجز تذكرة جديدة</button>
+   <div style="direction: rtl;" class="form-check form-switch">
+    <label class="form-check-label" for="flexSwitchCheckChecked" style="color: #9694a3;">مفعلة</label>
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" style="background-color: #8A74F9;" checked>
+    </div>
+  </div>
+  <div class="right-row">
+    <button class="search"><i class="fa-solid fa-right-left fa-rotate-90"></i></button>
+    <button class="search"><i class="fa-solid fa-sliders"></i></button>
+    <input class="search" type="search" id=search placeholder="بحث .............">
+    <label for="search"  >: مبيعات التذاكر</label>
+   </div>
+</div>
+
+<p-table
+    [value]="tickets"
+    [paginator]="true"
+    [rows]="9"
+    [showCurrentPageReport]="true"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    currentPageReportTemplate="عرض {first} من اصل{last} الي {totalRecords}"
+    [rowsPerPageOptions]="[3, 5, 9]">
+    <ng-template pTemplate="header">
+        <tr>
+          <th>#</th>
+          <th>المستخدم</th>
+          <th>رقم التذكرة</th>
+          <th>قيمى التذكرة</th>
+          <th>السينمات</th>
+          <th>الأشخاص</th>
+          <th>عدد مرات الشراء</th>
+          <th>التذكرة</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" *ngfor="let ticket of tickets">
+    <tr>
+      <td>{{ticket.id}}</td>
+      <td>{{ticket.name}}</td>
+      <td>{{ticket.ticketNumber}}</td>
+      <td pTooltip pTooltip="{{ticket.cenima}}">{{ticket.cenima}}</td>
+      <td>{{ticket.persons}}</td>
+      <td>{{ticket.numberoftimes}}</td>
+      <td>{{ticket.ticketPdF}}</td></tr></ng-template>
+
+    <ng-template pTemplate="paginatorright">
+        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text">عرض</p-button>
+    </ng-template>
+</p-table>

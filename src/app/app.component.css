@@ -1,0 +1,12 @@
+.row-component {
+ width: 100%;
+ display: flex;
+ margin: 5px;
+ padding:auto;
+ justify-content: center;
+}
+#chart {
+ width: 100%; 
+ height: min-content;
+
+}
